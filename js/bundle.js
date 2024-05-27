@@ -4036,7 +4036,7 @@
       console.log(this.roadmap.bigeyeboy);
     }
     renderBeadPlateData() {
-      const cmdWidth = this.beadPlateRoadBox.width / 10;
+      const cmdWidth = this.beadPlateRoadBox.width / 6;
       const cmdHeight = this.beadPlateRoadBox.height / 6;
       const drawWidth = Math.min(cmdWidth, cmdHeight);
       const matrix = this.roadmap.breadplate.matrix;
@@ -4079,7 +4079,7 @@
       });
     }
     renderBigRoadData() {
-      const cmdWidth = this.bigRoadBox.width / 20;
+      const cmdWidth = this.bigRoadBox.width / 16;
       const cmdHeight = this.bigRoadBox.height / 6;
       const boxWidth = Math.min(cmdWidth, cmdHeight);
       const matrix = this.roadmap.bigroad.matrix;
@@ -4120,7 +4120,7 @@
       });
     }
     renderBigEyeRoadData() {
-      const cmdWidth = this.bigEyeRoadBox.width / 40;
+      const cmdWidth = this.bigEyeRoadBox.width / 20;
       const cmdHeight = this.bigEyeRoadBox.height / 6;
       const boxWidth = Math.min(cmdWidth, cmdHeight);
       const matrix = this.roadmap.bigeyeboy.matrix;
@@ -4129,7 +4129,7 @@
       const cell = matrix[rowIndex][colIndex];
       if (cell && cell.value) {
         const centerX = colIndex * cmdWidth + cmdWidth / 2 - boxWidth * 0.4;
-        const centerY = rowIndex * boxWidth + boxWidth / 2 - boxWidth * 0.4;
+        const centerY = rowIndex * boxWidth + boxWidth / 2 - boxWidth * 0.2;
         let imgUrl;
         switch (cell.value) {
           case "blue":
@@ -4143,7 +4143,7 @@
         }
         if (imgUrl) {
           Laya.loader.load(imgUrl).then((res) => {
-            this.bigEyeRoadSprite.graphics.drawImage(res, centerX, centerY, boxWidth * 0.7, boxWidth * 0.7);
+            this.bigEyeRoadSprite.graphics.drawImage(res, centerX, centerY, boxWidth * 0.8, boxWidth * 0.8);
           });
         }
       }
@@ -4154,7 +4154,7 @@
       });
     }
     renderSmallRoadmData() {
-      const cmdWidth = this.smallRoadBox.width / 20;
+      const cmdWidth = this.smallRoadBox.width / 10;
       const cmdHeight = this.smallRoadBox.height / 6;
       const boxWidth = Math.min(cmdWidth, cmdHeight);
       const matrix = this.roadmap.smallroad.matrix;
@@ -4188,7 +4188,7 @@
       });
     }
     renderCockroachRoadmData() {
-      const cmdWidth = this.cockroachRoadBox.width / 20;
+      const cmdWidth = this.cockroachRoadBox.width / 10;
       const cmdHeight = this.cockroachRoadBox.height / 6;
       const boxWidth = Math.min(cmdWidth, cmdHeight);
       const matrix = this.roadmap.cockroachPig.matrix;
